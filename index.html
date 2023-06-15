@@ -1,0 +1,238 @@
+<!DOCTYPE>
+<html>
+<head>
+ <title>Resort Management System</title>
+ <link rel="stylesheet" type="text/css" href="css/style.css">
+ <style>
+  body {
+   background-image: url(4.jpg);
+   background-repeat: no-repeat;
+   background-attachment:fixed;
+   background-size:cover;
+   background-position:center;
+ }
+ </style>
+  <script src="jscript.js"></script>
+  <php src="connection_aishu.php"></php>
+</head>
+
+<body>
+
+ <header>
+  <div class="main">
+   <div class="logo">
+   <img src="logo.png">
+   </div>
+   <ul>
+     <li class="active"><a href="#"><p style="color:#ffffff"><pre>welcome</pre></p></a></li>
+     <li onclick="document.getElementById('id04').style.display='block'" style="width:auto;"><a href="#"><p style="color:#ffffff"><pre>     Admin</pre></p></a></li>
+     <li onclick="document.getElementById('id02').style.display='block'" style="width:auto;"><a href="#"><p style="color:#ffffff"><pre>     Login     </pre></p></a></li>
+     <li onclick="document.getElementById('id03').style.display='block'" style="width:auto;"><a href="#"><p style="color:#ffffff"><pre>     Sign up     </pre></p></a></li>
+     <li><a href="about.html"><p style="color:#ffffff"><pre>       About       </pre></p></a></li>
+     <li><a href="contact.html"><p style="color:#ffffff"><pre>     Contact    </pre></p></a></li>
+   </ul>
+  </div>
+  <div class="title">
+     <h1>RESORT MANAGEMENT SYSTEM</h1>
+  </div>
+
+  <div class="button">
+   <a href="samplerooms.html" class="btn">sample rooms</a>
+   <a href="learnmore.html" class="btn">learn more</a>
+  </div>
+ </header>
+
+ <div id="id04" class="modal">
+  
+  <form class="modal-content animate" action="admin_conn.php" method="post">
+    <div class="imgcontainer">
+    
+    <div class="message"><?php if($message!="") { echo $message; } ?></div>
+      <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="profile.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="username"><b>username</b></label><br>
+      <input type="varchar" placeholder="Enter Username" name="username" autocomplete="off" onkeydown="func(event)" required>
+<br>
+<br>
+      <label for="password"><b>password</b></label><br>
+      <input type="password" placeholder="Enter Password" name="password" onkeydown="func(event)" required>
+<br>  
+      <button type="submit">Login</button>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id04').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+
+
+
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id04');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+ <div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="login_auth.php" method="post">
+    <div class="imgcontainer">
+    
+    <div class="message"><?php if($message!="") { echo $message; } ?></div>
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="profile.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="user id"><b>user id</b></label><br>
+      <input type="number" placeholder="Enter User id" name="user_id" onkeydown="func(event)" required>
+<br>
+<br>
+      <label for="password"><b>password</b></label><br>
+      <input type="password" placeholder="Enter Password" name="password" onkeydown="func(event)" required>
+<br>  
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="unchecked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+
+
+
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+<div id="id02" class="modal">
+  
+  <form class="modal-content animate" action="login_auth_user.php" method="post">
+    <div class="imgcontainer">
+    <div class="message"><?php if($message!="") { echo $message; } ?></div>
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="profile.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="user id"><b>user id</b></label><br>
+      <input type="varchar" placeholder="Enter Username" name="user_id" onkeydown="func(event)" required>
+<br>
+<br>
+      <label for="password"><b>password</b></label><br>
+      <input type="password" placeholder="Enter Password" name="password" onkeydown="func(event)" required>
+<br>
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+
+
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+<div id="id03" class="modal1">
+  
+  <form class="modal-content animate" action="connection_aishu.php" href="index.html" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="profile.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+     
+      <label for="username"><b>username</b></label><br>
+      <input type="varchar" placeholder="Enter Username" name="username" onkeydown="func(event)" required>
+<br>
+<br>
+      <label for="password"><b>password</b></label><br>
+      <input type="password" minlength=10 placeholder="Enter Password" name="password" onkeydown="func(event)" required>
+<br>
+<br>
+      <label for="gender"><b>gender</b></label><br>
+      <input type="char" placeholder="gender" name="gender" onkeydown="func(event)" required>
+<br>
+<br>
+      <label for="address"><b>address</b></label><br>
+      <input type="text" placeholder="Enter Address" name="address" onkeydown="func(event)" required>
+<br>
+      <label for="phone"><b>phone</b></label><br>
+      <input type="big int" minlength=10,maxlength=10 placeholder="Enter Phone" name="phone" onkeydown="func(event)" required>
+<br>
+<br>
+      <label for="email"><b>email</b></label><br>
+      <input type="email" placeholder="Enter Email" name="email" onkeydown="func(event)" required>
+<br>
+<br>
+      <button type="submit" name="reg">Sign up</button>
+    </div>
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal1 = document.getElementById('id03');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal1) {
+        modal.style.display = "none";
+    }
+}
+</script>
+</body>
+
+ 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+  
+
+</html>

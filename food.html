@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 600px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+
+<title>order food</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<style>
+  body {
+   background-image: url(food.jpg);
+   background-repeat: no-repeat;
+   background-attachment:fixed;
+   background-size:cover;
+   background-position:center;
+   font-size: 20px;
+   color: #000000;
+ }
+
+table {
+  border-collapse: collapse;
+  width: 95%;
+  border-left: 20 px
+}
+
+td, th {
+  border: 1px solid #000000;
+  text-align: left;
+  padding: 8px;
+}
+
+</style>
+
+<script src="jscript.js"></script>
+</head>
+<body>
+
+<div class="row">
+  <div class="column">
+    <h2>Food menu</h2>
+    <br>
+    <table>
+    <tr>
+     <th>item_id</th>
+     <th>item_name</th>
+     <th>price</th>
+    </tr>
+     <tr>
+     <td>1</td>
+     <td>Pizza</td>
+     <td>300</td>
+    </tr>
+    <tr>
+     <td>2</td>
+     <td>Burger</td>
+     <td>150</td>
+    </tr>
+    <tr>
+     <td>3</td>
+     <td>Fries</td>
+     <td>95</td>
+    </tr>
+    <tr>
+     <td>4</td>
+     <td>Basic Salad</td>
+     <td>85</td>
+    </tr>
+    <tr>
+     <td>5</td>
+     <td>White sauce pasta</td>
+     <td>250</td>
+    </tr>
+    <tr>
+     <td>6</td>
+     <td>Oreo milkshake</td>
+     <td>60</td>
+    </tr>
+    <tr>
+     <td>7</td>
+     <td>Red sauce pasta</td>
+     <td>60</td>
+    </tr>
+    <tr>
+     <td>8</td>
+     <td>American salad</td>
+     <td>120</td>
+    </tr>
+    <tr>
+     <td>9</td>
+     <td>Sandwich</td>
+     <td>150</td>
+   </tr>
+   <tr>
+     <td>10</td>
+     <td>Cheese Sandwich</td>
+     <td>140</td>
+   </tr>
+   <tr>
+     <td>11</td>
+     <td>Vegetable Sandwich</td>
+     <td>135</td>
+   </tr>
+   <tr>
+     <td>12</td>
+     <td>Chocolate Sandwich</td>
+     <td>120</td>
+   </tr>
+   <br>
+
+</table>
+  </div>
+
+
+
+
+
+  <div class="column">
+    <h2>Order now !</h2>
+    <center>
+
+<br>
+<br>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;background-color:red;">Order</button>
+
+<div id="id01" class="modal1">
+  
+  <form class="modal-content animate" action="food_order.php" href="bookingsuccessfulmessage.html" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="profile.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="user id"><b>user id</b></label><br>
+      <input type="number" placeholder="Enter User id" name="user_id" onkeydown="func(event)" required>
+<br>
+<br>
+      <label for="book id"><b>book id</b></label><br>
+      <input type="number" placeholder="Enter Book id" name="book_id" onkeydown="func(event)" required>
+<br>
+<br>     
+      <label for="item id"><b>item id</b></label><br>
+      <input type="number" placeholder="Enter Item id" name="item_id" onkeydown="func(event)" required>
+<br>
+<br>
+       <label for="item_name"><b>item_name</b></label><br>
+      <select name="item_name">
+    <option value="-select-">-select-</option>
+    <option value="Pizza">Pizza</option>
+    <option value="Burger">Burger</option>
+    <option value="Fries">Fries</option>
+    <option value="Basic salad">Basic salad</option>
+    <option value="White sauce pasta">White sauce pasta</option>
+    <option value="Oreo milkshake">Oreo milkshake</option>
+    <option value="Red sauce pasta">Red sauce pasta</option>
+    <option value="American salad">American salad</option>
+    <option value="Sandwich">Sandwich</option>
+    <option value="Cheese Sandwich">Cheese Sandwich</option>
+    <option value="Vegetable Sandwich">Vegetable Sandwich</option>
+    <option value="Chocolate Sandwich">Chocolate Sandwich</option>
+      </select>
+<br>
+<br>
+      <label for="quantity"><b>quantity</b></label><br>
+      <input type="number" placeholder="Enter quantity" name="quantity" onkeydown="func(event)" required>
+<br>
+<br>      
+      <button type="submit">Order</button>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+</center>
+  </div>
+</div>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+  
+</html>
